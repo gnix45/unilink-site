@@ -2,97 +2,63 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UNILINK IMPORTERS ✨️</title>
-  <link rel="stylesheet" href="style.css">
+  <title>UNILINK IMPORTERS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>UNILINK IMPORTERS ✨️</h1>
-  </header>  <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">My Cart</a>
-  </nav>  <div class="controls">
-    <input type="text" id="searchInput" onkeyup="filterItems()" placeholder="Search for a product...">
-    <select id="categorySelect" onchange="filterItems()">
-      <option value="all">All Categories</option>
-      <option value="tech">Tech</option>
-      <option value="fitness">Fitness</option>
-      <option value="home">Home</option>
-    </select>
-  </div>  <div class="catalog">
-    <div class="item" data-category="fitness">
-      <img src="https://via.placeholder.com/250" alt="Item 1">
-      <h2>Smart Watch</h2>
-      <p>Track health and fitness smartly.</p>
-      <p class="price">$50</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Categories</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+  <div class="container">
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="fashion">Fashion</option>
+        <option value="beauty">Beauty</option>
+        <option value="home">Home</option>
+      </select>
     </div>
-    <div class="item" data-category="tech">
-      <img src="https://via.placeholder.com/250" alt="Item 2">
+    <div class="product-grid">
+      <div class="product-card" data-category="electronics" onclick="openModal('product1')">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/product1a.jpg" alt="Product 1a" /></div>
+            <div class="swiper-slide"><img src="images/product1b.jpg" alt="Product 1b" /></div>
+            <div class="swiper-slide"><img src="images/product1c.jpg" alt="Product 1c" /></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+        <h2 class="product-title">Bluetooth Earbuds</h2>
+        <p class="product-description">High quality sound with long battery life</p>
+        <p class="product-price">$25</p>
+      </div>
+    </div>
+  </div>  <div id="product1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('product1')">&times;</span>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/product1a.jpg" alt="Product 1a" /></div>
+          <div class="swiper-slide"><img src="images/product1b.jpg" alt="Product 1b" /></div>
+          <div class="swiper-slide"><img src="images/product1c.jpg" alt="Product 1c" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
       <h2>Bluetooth Earbuds</h2>
-      <p>Wireless sound freedom.</p>
-      <p class="price">$35</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
+      <p>Enjoy immersive audio quality with our latest Bluetooth earbuds. Features include noise cancellation, 24-hour battery life, and a sleek design perfect for everyday use.</p>
+      <p><strong>Price:</strong> $25</p>
+      <a href="https://wa.me/237675937819" class="whatsapp-button">Order on WhatsApp</a>
     </div>
-    <div class="item" data-category="home">
-      <img src="https://via.placeholder.com/250" alt="Item 3">
-      <h2>Portable Blender</h2>
-      <p>Blend fruits on the go.</p>
-      <p class="price">$28</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="tech">
-      <img src="https://via.placeholder.com/250" alt="Item 4">
-      <h2>Mini Projector</h2>
-      <p>Big screen in your pocket.</p>
-      <p class="price">$75</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="tech">
-      <img src="https://via.placeholder.com/250" alt="Item 5">
-      <h2>LED Selfie Light</h2>
-      <p>Perfect lighting anytime.</p>
-      <p class="price">$15</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="tech">
-      <img src="https://via.placeholder.com/250" alt="Item 6">
-      <h2>Phone Holder</h2>
-      <p>Stable phone grip.</p>
-      <p class="price">$10</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="tech">
-      <img src="https://via.placeholder.com/250" alt="Item 7">
-      <h2>Wireless Keyboard</h2>
-      <p>Type from a distance.</p>
-      <p class="price">$40</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="home">
-      <img src="https://via.placeholder.com/250" alt="Item 8">
-      <h2>USB Rechargeable Fan</h2>
-      <p>Cool breeze anywhere.</p>
-      <p class="price">$18</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="home">
-      <img src="https://via.placeholder.com/250" alt="Item 9">
-      <h2>Laptop Stand</h2>
-      <p>Ergonomic workspace.</p>
-      <p class="price">$22</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-    <div class="item" data-category="fitness">
-      <img src="https://via.placeholder.com/250" alt="Item 10">
-      <h2>Fitness Tracker Band</h2>
-      <p>Track steps and sleep.</p>
-      <p class="price">$30</p>
-      <a class="whatsapp-btn" href="https://wa.me/237675937819">Order on WhatsApp</a>
-    </div>
-  </div>
-  <script src="script.js" ></script>
-</body>
+  </div>  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script> 
+   <script src="script.js"></script>
+ </body>
 </html>
