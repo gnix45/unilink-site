@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNILINK IMPORTERS ✨️</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .controls {
+      text-align: center;
+      margin: 20px;
+    }
+    .controls input, .controls select {
+      padding: 10px;
+      margin: 5px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .item {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    .item img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .item h2 {
+      font-size: 1.2rem;
+      margin: 10px 0 5px;
+    }
+    .item p {
+      margin: 0 0 10px;
+    }
+    .price {
+      color: green;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .whatsapp-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .whatsapp-btn:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
+  <script>
+    function filterItems() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const category = document.getElementById('categorySelect').value;
+      const items = document.querySelectorAll('.item');items.forEach(item => {
+    const name = item.querySelector('h2').textContent.toLowerCase();
+    const itemCat = item.getAttribute('data-category');
+
+    const match = name.includes(search) && (category === "all" || itemCat === category);
+    item.style.display = match ? '' : 'none';
+  });
+}
+
+  </script>
+</head>
+<body>
+  <header>
+    <h1>UNILINK IMPORTERS ✨️</h1>
+  </header>  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">My Cart</a>
+  </nav>  <div class="controls">
+    <input type="text" id="searchInput" onkeyup="filterItems()" placeholder="Search for a product...">
+    <select id="categorySelect" onchange="filterItems()">
+      <option value="all">All Categories</option>
+      <option value="tech">Tech</option>
+      <option value="fitness">Fitness</option>
+      <option value="home">Home</option>
+    </select>
+  </div>  <div class="catalog">
+    <div class="item" data-category="fitness">
+      <img src="https://via.placeholder.com/250" alt="Item 1">
+      <h2>Smart Watch</h2>
+      <p>Track health and fitness smartly.</p>
+      <p class="price">$50</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="tech">
+      <img src="https://via.placeholder.com/250" alt="Item 2">
+      <h2>Bluetooth Earbuds</h2>
+      <p>Wireless sound freedom.</p>
+      <p class="price">$35</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="home">
+      <img src="https://via.placeholder.com/250" alt="Item 3">
+      <h2>Portable Blender</h2>
+      <p>Blend fruits on the go.</p>
+      <p class="price">$28</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="tech">
+      <img src="https://via.placeholder.com/250" alt="Item 4">
+      <h2>Mini Projector</h2>
+      <p>Big screen in your pocket.</p>
+      <p class="price">$75</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="tech">
+      <img src="https://via.placeholder.com/250" alt="Item 5">
+      <h2>LED Selfie Light</h2>
+      <p>Perfect lighting anytime.</p>
+      <p class="price">$15</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="tech">
+      <img src="https://via.placeholder.com/250" alt="Item 6">
+      <h2>Phone Holder</h2>
+      <p>Stable phone grip.</p>
+      <p class="price">$10</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="tech">
+      <img src="https://via.placeholder.com/250" alt="Item 7">
+      <h2>Wireless Keyboard</h2>
+      <p>Type from a distance.</p>
+      <p class="price">$40</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="home">
+      <img src="https://via.placeholder.com/250" alt="Item 8">
+      <h2>USB Rechargeable Fan</h2>
+      <p>Cool breeze anywhere.</p>
+      <p class="price">$18</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="home">
+      <img src="https://via.placeholder.com/250" alt="Item 9">
+      <h2>Laptop Stand</h2>
+      <p>Ergonomic workspace.</p>
+      <p class="price">$22</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+    <div class="item" data-category="fitness">
+      <img src="https://via.placeholder.com/250" alt="Item 10">
+      <h2>Fitness Tracker Band</h2>
+      <p>Track steps and sleep.</p>
+      <p class="price">$30</p>
+      <a class="whatsapp-btn" href="https://wa.me/1234567890">Order on WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>
